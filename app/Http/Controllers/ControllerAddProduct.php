@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\ListProduct;
+use App\Http\Requests\requestForm;
 use Illuminate\Http\Request;
 
 class ControllerAddProduct extends Controller
@@ -10,8 +11,7 @@ class ControllerAddProduct extends Controller
 
         return view('Page.AddProduct');
     }
-    public function addProduct(Request $request){
-
+    public function addProduct(requestForm $request){
 
         if ($request->hasFile('image')){
             $addProduct = new ListProduct();
